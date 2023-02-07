@@ -1,0 +1,44 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "⛰️ Impossible Ladder Climb Obby!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "enable jump",
+	Callback = function()
+      		print("enabled jump")
+  	        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+  	   end
+})
+
+local Tab = Window:MakeTab({
+	Name = "misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "tp to end",
+	Callback = function()
+      		print("teleported to end")
+  	        local player = game.Players.LocalPlayer
+local target = game:GetService("Workspace").Map.M10.Rock
+local tweenService = game:GetService("TweenService")
+
+local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear)
+local tween = tweenService:Create(player.Character.HumanoidRootPart, tweenInfo, {CFrame = target.CFrame})
+tween:Play()
+end
+})
+
+Tab:AddButton({
+	Name = "fates admin",
+	Callback = function()
+      		print("loaded fates admin")
+  	        loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+end
+})
