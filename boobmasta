@@ -22,7 +22,7 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-	Name = "tp to end",
+	Name = "tp to end / reset if got stuck",
 	Callback = function()
       		print("teleported to end / reset if got stuck")
   	        local player = game.Players.LocalPlayer
