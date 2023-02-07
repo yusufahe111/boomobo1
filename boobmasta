@@ -24,7 +24,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "tp to end",
 	Callback = function()
-      		print("teleported to end")
+      		print("teleported to end / reset if got stuck")
   	        local player = game.Players.LocalPlayer
 local target = game:GetService("Workspace").Map.M10.Rock
 local tweenService = game:GetService("TweenService")
@@ -42,3 +42,5 @@ Tab:AddButton({
   	        loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
 end
 })
+
+OrionLib:Init()
